@@ -1,7 +1,7 @@
 import React from "react";
 
 function Error() {
-  return <div>index</div>;
+  return <div>Error Page</div>;
 }
 
 export default Error;
