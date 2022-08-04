@@ -1,0 +1,21 @@
+.disabledMain {
+  width: 100vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 3;
+
+  .section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disabledFont {
+    font-size: 80px;
+    font-weight: 700;
+    color: black;
+  }
+}
