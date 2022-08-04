@@ -1,9 +1,11 @@
-import type {PokemonProps} from 'src/services/pokemonAPI.type'
 import type { PokemonDetailsProps } from "src/services/pokemon.type";
+import { Dispatch, SetStateAction } from 'react';
 
 export interface PokemonCardProps {
   // data
   data:  PokemonDetailsProps;
+  // close card
+  close: Dispatch<SetStateAction<boolean>>;
   //styling
   style?: React.CSSProperties;
   // optional if component clickable

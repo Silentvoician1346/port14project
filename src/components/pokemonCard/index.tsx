@@ -4,7 +4,7 @@ import ElementBlock from "src/components/elementBlock";
 import type { PokemonCardProps } from "./pokemonCard.type";
 
 function PokemonCard(props: PokemonCardProps) {
-	const { data, style, isDisabled, onClick, isActive } = props;
+	const { data } = props;
 
 	return (
 		<section>
@@ -17,7 +17,7 @@ function PokemonCard(props: PokemonCardProps) {
 					<div className={font.h5}>{data.name}</div>
 					<div className={styles.elementRow}>
 						{data.elements.map((el) => (
-							<ElementBlock value={el.type.name} />
+							<ElementBlock value={el.type.name} key={el.slot} />
 						))}
 					</div>
 				</div>

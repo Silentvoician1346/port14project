@@ -1,0 +1,72 @@
+.pokemonCardDetailSection {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 4;
+  }
+
+  .pokemonCardDetail {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    height: 800px;
+    opacity: 1;
+    background: transparent url("../../assets/images/bg.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    z-index: 5;
+
+    .firstBlock {
+      display: flex;
+      height: 400px;
+
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .secondBlock {
+      display: flex;
+      height: 400px;
+      padding-top: 60px;
+      padding-left: 10%;
+
+      .leftBlock {
+        width: 50%;
+        .elementRow {
+          display: flex;
+          flex-direction: row;
+          margin-top: 10px;
+          gap: 12px;
+          .element {
+            margin-top: 2px;
+            padding-right: 4px;
+          }
+        }
+      }
+
+      .rightBlock {
+        width: 50%;
+        margin-top: 40px;
+        margin-inline: 40px;
+        .statusRow{
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+    }
+    
+  }
+}
