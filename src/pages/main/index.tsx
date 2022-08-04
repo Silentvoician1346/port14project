@@ -3,9 +3,11 @@ import SearchInput from "src/components/searchInput";
 import LoadingScreen from "src/handlers/loading";
 import PokemonCard from "src/components/pokemonCard";
 import PageInput from "src/components/pageInput";
+import { defaultPokemonDetail } from "./main.constant";
+import PokemonCardDetail from "src/components/pokemonCardDetail";
 import font from "src/utils/theme/font.module.scss";
 import styles from "./main.module.scss";
-import { getPokemonList, getPokemoDetails } from "src/services/pokemon";
+import { searchHandle, checkPage } from "./main.logic";
 import type { PokemonDetailsProps } from "src/services/pokemon.type";
 
 function Main() {
@@ -17,17 +19,9 @@ function Main() {
 	const [isFirstPage, setIsFirstPage] = useState<boolean>(true);
 	const [isLastPage, setIsLastPage] = useState<boolean>(false);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isCardDetail, setIsCardDetail] = useState<boolean>(false);
+	const [cardContent, setCardContent] = useState<PokemonDetailsProps>(defaultPokemonDetail);
 
-	const searchHandle = async () => {
-		setIsLoading(true);
-		const { results, count, next, previous } = await getPokemonList(currentPage);
-		setMaxPage(Math.floor(count / 24) + 1);
-		console.log("page", currentPage);
-		const searchResult = await getPokemoDetails(results);
-		setSearchResult(searchResult);
-		checkPage(next, previous);
-		setIsLoading(false);
-	};
 	const changePageHandle = (page: number) => {
 		setCurrentPage(page);
 		setInputPage(page);
@@ -38,25 +32,24 @@ function Main() {
 	const nextHandle = () => {
 		setCurrentPage((currentPage) => currentPage + 1);
 	};
-	const checkPage = (next: string | null, previous: string | null) => {
-		if (previous === null) {
-			setIsFirstPage(true);
-		} else if (next === null) {
-			setIsLastPage(true);
-		} else {
-			setIsFirstPage(false);
-			setIsLastPage(false);
-		}
+
+	const clickCardHandle = (data: PokemonDetailsProps) => {
+		setCardContent(data);
+		setIsCardDetail(true);
 	};
+
 	useEffect(() => {
-		searchHandle();
+		searchHandle(setIsFirstPage, setIsLastPage, setIsLoading, currentPage, setMaxPage, setSearchResult, checkPage);
 	}, [currentPage]);
 
 	return (
 		<div className={styles.container}>
 			{isLoading ? <LoadingScreen /> : null}
+			{isCardDetail ? <PokemonCardDetail data={cardContent} close={setIsCardDetail} /> : null}
 			<main className={styles.main}>
-				<header className={styles.header}>PokeDex</header>
+				<header className={styles.header}>
+					<div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-700 text-[60px] font-bold italic">Ndrian PokeDex</div>
+				</header>
 				<div className={styles.content}>
 					<section className={styles.searchSection}>
 						{/* <div>
@@ -77,7 +70,9 @@ function Main() {
 					</section>
 					<div className="grid grid-cols-8  m-4">
 						{searchResult.map((data: PokemonDetailsProps) => (
-							<PokemonCard data={data} key={data.id} />
+							<div onClick={() => clickCardHandle(data)}>
+								<PokemonCard data={data} key={data.id} close={() => null} />
+							</div>
 						))}
 					</div>
 				</div>

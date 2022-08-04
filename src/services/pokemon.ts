@@ -7,7 +7,6 @@ async function getPokemonList(page: number): Promise<PokemonListProps> {
     method: 'GET',
     url: `${process.env.REACT_APP_BASE_URL}/pokemon?limit=24&offset=${skip}`
   })
-  console.log(response.data)
   const result: PokemonListProps = {
     results: response.data.results,
     count: response.data.count,
@@ -17,7 +16,7 @@ async function getPokemonList(page: number): Promise<PokemonListProps> {
   return result
 }
 
-async function getPokemoDetails(datas: resultProps[]): Promise<PokemonDetailsProps[]>  {
+async function getPokemonDetails(datas: resultProps[]): Promise<PokemonDetailsProps[]>  {
   const responses = await Promise.all( datas.map(async (data:resultProps)=>{
     const response: AxiosResponse<any> = await axios({
       method: 'GET',
@@ -57,9 +56,8 @@ async function getPokemoDetails(datas: resultProps[]): Promise<PokemonDetailsPro
     }
     return result
   }))
-  console.log(responses)
   return responses
 }
 
 
-export {getPokemonList, getPokemoDetails}
+export {getPokemonList, getPokemonDetails}
