@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.main {
+    display: block;
+    min-width: 1080px;
+    width: 1440px;
+    height: 100%;
+    background-color: aquamarine;
+
+    .header {
+    width: 100%;
+    height: 80px;
+    background-color: orange;
+    }
+    
+    .content{
+        width: 100%;
+        height: 100%;
+
+        background-color: cyan;
+
+        .filterSection {
+        background-color: burlywood;
+
+        }
+
+        .searchSection {
+        background-color: darkkhaki;  
+        }
+    }
+
+    .cardGrid {
+        display: grid;
+        grid-column: 4;
+        width: 100%;
+        height: 100%;
+    }
+}
