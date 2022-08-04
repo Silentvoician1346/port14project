@@ -1,6 +1,6 @@
 ## Ndrian PokeDex
 
-This is a PokeDex made using React JS and Tailwind CSS
+This is a PokeDex made using React JS, Tailwind CSS and SASS
 
 Credits to PokeApi 
 https://pokeapi.co/
