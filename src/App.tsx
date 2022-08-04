@@ -6,14 +6,14 @@ import Main from "src/pages/main";
 import Error from "src/pages/error";
 
 function App() {
-  return (
-    <>
-      <Routes>
-        <Route index element={<Main />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </>
-  );
+	return (
+		<>
+			<Routes>
+				<Route index element={<Main />} />
+				<Route path="*" element={<Error />} />
+			</Routes>
+		</>
+	);
 }
 
 export default App;

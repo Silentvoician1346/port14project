@@ -2,35 +2,50 @@
     display: flex;
     justify-content: center;
     width: 100vw;
+    min-height: 100vh;
     height: 100%;
+    background-color: #1b252f;
 }
 
 .main {
     display: block;
     min-width: 1080px;
     width: 1440px;
+    min-height: 100vh;
     height: 100%;
-    background-color: aquamarine;
+    background-color: black;
 
     .header {
     width: 100%;
     height: 80px;
-    background-color: orange;
     }
     
     .content{
         width: 100%;
         height: 100%;
 
-        background-color: cyan;
-
         .filterSection {
-        background-color: burlywood;
 
         }
 
         .searchSection {
-        background-color: darkkhaki;  
+        display: flex;
+        flex-direction: row-reverse;
+        height: 70px;
+        margin-inline: 16px;
+        gap: 16px;
+
+        .button{
+            background-color: dodgerblue;
+            :hover{
+            background-color: rgb(133, 184, 236);
+
+            }
+            :disabled {
+                background-color: rgb(26, 77, 127);
+            }
+        }
+
         }
     }
 
