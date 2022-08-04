@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios'
 import type { resultProps, PokemonListProps, PokemonDetailsProps} from './pokemon.type'
 
 async function getPokemonList(page: number): Promise<PokemonListProps> {
-  const skip :number = 24 * page
+  const skip :number = 24 * (page - 1)
   const response: AxiosResponse<any> = await axios({
     method: 'GET',
     url: `${process.env.REACT_APP_BASE_URL}/pokemon?limit=24&offset=${skip}`
