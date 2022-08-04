@@ -1,0 +1,54 @@
+.pageInputSection {
+    display: flex;
+    align-items: center;
+
+    .pageInput {
+        width: 100px;
+        max-width:24rem;
+        margin-left: 8px;
+
+        .section {
+            display: flex;
+            align-items: center;
+            border-bottom-width: 1px;
+            border-color: rgb(20 184 166);
+            padding-top: 0.5rem;
+
+            .input {
+                appearance: none;
+                background-color: transparent;
+                border-style: none;
+                text-align: center;
+                width: 100%;
+                color: white;
+                margin-right: 12px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                padding-left: 8px;
+                padding-right: 8px;
+                line-height: 1.25;
+                outline: none;
+            }
+
+            .button {
+                flex-shrink: 0;
+                background-color: dodgerblue;
+                border-color: dodgerblue;
+                font-size: 0.875rem/* 14px */;
+                line-height: 1.25rem/* 20px */;
+                border-width: 4px;
+                color: white;
+                padding-top: 0.25rem/* 4px */;
+                padding-bottom: 0.25rem/* 4px */;
+                padding-left: 0.5rem/* 8px */;
+                padding-right: 0.5rem/* 8px */;
+                border-radius: 0.25rem/* 4px */;
+                :hover{
+                background-color: rgb(13, 118, 223);
+                border-color: rgb(13, 118, 223);
+                }
+
+            }
+        }
+}
+}
