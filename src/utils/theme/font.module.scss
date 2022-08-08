@@ -1,34 +1,55 @@
+@import "./screen.scss";
+
 .h1 {
-  font-size: 48px;
+  font-size: 16px;
   color: dodgerblue;
   font-weight: 700;
   font-style: italic;
+
+  @include largeScreen {
+      font-size: 48px;
+    }
 }
 
 .h2 {
-  font-size: 36px;
+  font-size: 24px;
   color: white;
+  @include largeScreen {
+    font-size: 36px;
+  }
 }
 
 .h2b {
-  font-size: 36px;
+  font-size: 24px;
   color: cyan;
   font-weight: 700;
+  @include largeScreen {
+    font-size: 36px;
+  }
 }
 
 .h4 {
-  font-size: 20px;
+  font-size: 16px;
   color: white;
+  @include largeScreen {
+    font-size: 20px;
+  }
 }
 
 .h4b {
-  font-size: 20px;
+  font-size: 16px;
   color: cyan;
   font-weight: 700;
+  @include largeScreen {
+    font-size: 16px;
+  }
 }
 
 .h5 {
-  font-size: 16px;
+  font-size: 12px;
   color: white;
   font-weight: 400;
+  @include largeScreen {
+    font-size: 16px;
+  }
 }

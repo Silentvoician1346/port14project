@@ -1,3 +1,5 @@
+@import "../../utils/theme/screen.scss";
+
 .pokemonCardDetailSection {
   display: flex;
   position: absolute;
@@ -19,8 +21,8 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 520px;
-    height: 800px;
+    width: 320px;
+    height: 480px;
     opacity: 1;
     background: transparent url("../../assets/images/bg.png");
     background-repeat: no-repeat;
@@ -28,20 +30,31 @@
     position: relative;
     z-index: 5;
 
+    @include largeScreen {
+      width: 520px;
+      height: 800px;
+    }
+
     .firstBlock {
       display: flex;
-      height: 400px;
+      height: 280px;
 
       justify-content: center;
       align-items: center;
+      @include largeScreen {
+        height: 400px;
+      }
     }
     
     .secondBlock {
       display: flex;
       height: 400px;
-      padding-top: 60px;
+      padding-top: 0px;
       padding-left: 10%;
 
+      @include largeScreen {
+        padding-top: 60px;
+      }
       .leftBlock {
         width: 50%;
         .elementRow {
@@ -58,8 +71,12 @@
 
       .rightBlock {
         width: 50%;
-        margin-top: 40px;
+        margin-top: 0px;
         margin-inline: 40px;
+
+        @include largeScreen {
+          margin-top: 40px;
+        }
         .statusRow{
           display: flex;
           justify-content: space-between;

@@ -1,0 +1,14 @@
+$small-width: 640px;
+$large-width: 1024px;
+
+@mixin smallScreen {
+  @media (max-width: #{$small-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
