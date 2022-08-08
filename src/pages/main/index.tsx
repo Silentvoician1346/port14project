@@ -48,14 +48,14 @@ function Main() {
 			{isCardDetail ? <PokemonCardDetail data={cardContent} close={setIsCardDetail} /> : null}
 			<main className={styles.main}>
 				<header className={styles.header}>
-					<div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-700 text-[60px] font-bold italic">Ndrian PokeDex</div>
+					<div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-700 text-[40px] sm:text-[60px] font-bold italic">Ndrian PokeDex</div>
 				</header>
 				<div className={styles.content}>
 					<section className={styles.searchSection}>
 						{/* <div>
 							<SearchInput data={{ value: searchValue, setValue: setSearchValue }} />
 						</div> */}
-						<button className="bg-blue-400 disabled:bg-blue-100 hover:bg-blue-500 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-700 px-[36px] my-[12px] text-white font-semibold rounded-xl" onClick={nextHandle} disabled={isLastPage || isLoading}>
+						<button className="bg-blue-400 disabled:bg-blue-100 hover:bg-blue-500 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-700 px-[8px] sm:px-[36px] my-[12px] text-white font-semibold rounded-xl" onClick={nextHandle} disabled={isLastPage || isLoading}>
 							next
 						</button>
 						<div className="flex my-auto ">
@@ -63,12 +63,12 @@ function Main() {
 							<div className={font.h5}>/</div>
 							<div className={font.h5}>{maxPage}</div>
 						</div>
-						<button className="bg-blue-400 disabled:bg-blue-100 hover:bg-blue-500 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-700 px-[36px] my-[12px] text-white font-semibold rounded-xl" onClick={prevHandle} disabled={isFirstPage || isLoading}>
+						<button className="bg-blue-400 disabled:bg-blue-100 hover:bg-blue-500 active:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-700 px-[8px] sm:px-[36px] my-[12px] text-white font-semibold rounded-xl" onClick={prevHandle} disabled={isFirstPage || isLoading}>
 							prev
 						</button>
 						<PageInput setPage={changePageHandle} currentPage={currentPage} maxNumber={maxPage} setInputPage={setInputPage} inputPage={inputPage} isLoading={isLoading} />
 					</section>
-					<div className="grid grid-cols-8  m-4">
+					<div className="grid grid-cols-4 sm:grid-cols-8 w-['100%'] sm:w-[100%]  m-4">
 						{searchResult.map((data: PokemonDetailsProps) => (
 							<div onClick={() => clickCardHandle(data)}>
 								<PokemonCard data={data} key={data.id} close={() => null} />
